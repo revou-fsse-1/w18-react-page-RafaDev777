@@ -4,5 +4,5 @@ const ImageCard = (a:any) => (
         <div style=`background-image:{a.imageUrl}`>
             <p>{a.title}</p>
         </div>
-    </React.Fragment>
+    <React.Fragment/>
 )
