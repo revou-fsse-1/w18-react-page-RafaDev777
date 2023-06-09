@@ -1,14 +1,19 @@
 import React from "react";
-import { LikeButton } from "./Buttons";
+import LikeButton from "./LikeButton";
 
-const ImageCard = (props: { title: string; image: string }) => (
+const ImageCard = (props: {
+  key: number;
+  title: string;
+  image: string;
+  isLiked: boolean;
+}) => (
   <React.Fragment>
     <div
       style={{
         backgroundImage: `url(${props.image})`,
       }}
     >
-      <LikeButton />
+      <LikeButton key={props.key} isLiked={props.isLiked} />
       <p>{props.title}</p>
     </div>
   </React.Fragment>

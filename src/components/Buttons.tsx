@@ -1,18 +1,5 @@
 import React from "react";
 
-const LikeButton = () => {
-  const isLike = false;
-  isLike ? (
-    <React.Fragment>
-      <button>Like</button>
-    </React.Fragment>
-  ) : (
-    <React.Fragment>
-      <button>Liked</button>
-    </React.Fragment>
-  );
-};
-
 const JoinMembershipButton = () => (
   <React.Fragment>
     <button>Join Photo Club Membership</button>
@@ -25,4 +12,4 @@ const RegisterMembershipButton = () => (
   </React.Fragment>
 );
 
-export { LikeButton, JoinMembershipButton, RegisterMembershipButton };
+export { JoinMembershipButton, RegisterMembershipButton };

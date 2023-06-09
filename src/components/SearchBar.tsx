@@ -18,7 +18,12 @@ const SearchBar = () => {
             return data;
           }
         }).map((data, index) => (
-          <ImageCard key={index} title={data.title} image={data.imgUrl} />
+          <ImageCard
+            key={index}
+            title={data.title}
+            image={data.imgUrl}
+            isLiked={data.isLiked}
+          />
         ))}
       </div>
     </>
