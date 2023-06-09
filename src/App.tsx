@@ -11,7 +11,6 @@ function App() {
 			if (image.id === id) {
 				image.isLiked = isLiked;
 			}
-			console.log(image.isLiked);
 			return image;
 		});
 		setImage(newLikeStatus);
