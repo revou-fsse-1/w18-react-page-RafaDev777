@@ -1,15 +1,23 @@
-import React from "react";
+import React from 'react';
 
-const JoinMembershipButton = () => (
-  <React.Fragment>
-    <button>Join Photo Club Membership</button>
-  </React.Fragment>
+const JoinMembershipButton = (props: {
+	disabled: boolean;
+	onclick: React.MouseEventHandler;
+}) => (
+	<React.Fragment>
+		<button disabled={props.disabled} onClick={props.onclick}>
+			Join our membership now !
+		</button>
+	</React.Fragment>
 );
 
-const RegisterMembershipButton = () => (
-  <React.Fragment>
-    <button>Register Now</button>
-  </React.Fragment>
+const RegisterMembershipButton = (props: {
+	setShowForm: React.Dispatch<boolean>;
+	setIsRegistered: React.Dispatch<boolean>;
+}) => (
+	<React.Fragment>
+		<button>Register Now</button>
+	</React.Fragment>
 );
 
 export { JoinMembershipButton, RegisterMembershipButton };
