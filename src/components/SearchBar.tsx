@@ -7,21 +7,21 @@ const SearchBar = () =>{
     return(
         <>
         <input placeholder="Search Images" onChange={(e)=>setQuery(e.target.value)} />
-        {
-            Data.filter((data) =>{
-                if (query === ''){
-                    return data;
-                } else if (data.title.toLowerCase().includes(query.toLowerCase())){
-                    return data;
-                }
-            }).map((data,index)=>(
-                <ImageCard 
-                key = {index}
-                title ={data.title}
-                image ={data.imgUrl}
-                />
-            ))
-        }
+            <div>{
+                Data.filter((data) =>{
+                    if (query === ''){
+                        return data;
+                    } else if (data.title.toLowerCase().includes(query.toLowerCase())){
+                        return data;
+                    }
+                }).map((data,index)=>(
+                    <ImageCard 
+                    key = {index}
+                    title ={data.title}
+                    image ={data.imgUrl}
+                    />
+                ))
+            }</div>
     </>)
 }
 export default SearchBar
