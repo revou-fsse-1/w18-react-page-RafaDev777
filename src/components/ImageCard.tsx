@@ -1,8 +1,10 @@
 import React from "react"
-const ImageCard = (a:any) => (
+const ImageCard = (props: { title: string, image:string}) =>(
     <React.Fragment>
-        <div style=`background-image:{a.imageUrl}`>
-            <p>{a.title}</p>
+        <div style={{
+            backgroundImage: `url(${props.image})`}}>
+            <p>{props.title}</p>
         </div>
-    <React.Fragment/>
+    </React.Fragment>
 )
+export default ImageCard
