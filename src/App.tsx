@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchBar from './components/SearchBar';
+import SnackBar from './components/SnackBar';
 import { images as imagesData } from './datas/images';
 
 function App() {
@@ -15,9 +16,12 @@ function App() {
 		});
 		setImage(newLikeStatus);
 	};
+
+	const totalLikedImage = image.filter((image) => image.isLiked).length;
 	return (
 		<React.Fragment>
 			<SearchBar handleLiked={handleLiked} />
+			<SnackBar totalLiked={totalLikedImage} />
 		</React.Fragment>
 	);
 }
