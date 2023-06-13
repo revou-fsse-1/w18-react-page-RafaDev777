@@ -58,7 +58,11 @@ function App() {
 					/>
 				))}
 			</div>
-			{!showSnack && <button onClick={openModal}>Join our Membership!</button>}
+			{!showSnack && (
+				<button onClick={openModal} className="">
+					<p className={'text-3xl'}>Join our Membership!</p>
+				</button>
+			)}
 
 			<Modal isOpen={showModal}>
 				<button onClick={closeModal}>X</button>
