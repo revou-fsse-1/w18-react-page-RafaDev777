@@ -59,7 +59,7 @@ function App() {
 				))}
 			</div>
 			{!showSnack && (
-				<button onClick={openModal} className="">
+				<button onClick={openModal} className="bg-emerald-600">
 					<p className={'text-3xl'}>Join our Membership!</p>
 				</button>
 			)}
