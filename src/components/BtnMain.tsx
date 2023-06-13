@@ -1,13 +1,16 @@
 import { Fragment } from 'react';
+type BtnMainProps = {
+	children : 
+}
 
-const BtnMain = ({ label, onClick }) => (
+const BtnMain = ({ children, onClick }) => (
 	<Fragment>
 		<button
 			onClick={() => {
 				onClick;
 			}}
 		>
-			{label}
+			{children}
 		</button>
 	</Fragment>
 );

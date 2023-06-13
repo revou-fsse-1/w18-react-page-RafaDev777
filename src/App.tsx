@@ -3,6 +3,7 @@ import { images as imagesData } from './datas/images';
 import SearchBar from './components/SearchBar';
 import ImageCard from './components/ImageCard';
 import LikedImageBar from './components/LikedImageBar';
+import Modal from './components/Modal';
 
 function App() {
 	const [query, setQuery] = useState('');
@@ -44,6 +45,7 @@ function App() {
 				))}
 			</div>
 			<button>Join our Membership</button>
+			<Modal />
 		</Fragment>
 	);
 }
