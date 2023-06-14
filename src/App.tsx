@@ -44,33 +44,35 @@ function App() {
 
 	return (
 		<Fragment>
-			<LikedImageBar totalLiked={totalLikedImage} />
-			<SearchBar query={query} setQuery={setQuery} />
-			<div>
-				{filteredImage.map((data, index) => (
-					<ImageCard
-						key={index}
-						id={data.id}
-						title={data.title}
-						image={data.imgUrl}
-						isLiked={data.isLiked}
-						handleLike={handleLike}
-					/>
-				))}
-			</div>
-			{!showSnack && (
-				<button onClick={openModal} className="bg-emerald-600">
-					<p className={'text-3xl'}>Join our Membership!</p>
-				</button>
-			)}
+			<main className="bg-slate-700">
+				<LikedImageBar totalLiked={totalLikedImage} />
+				<SearchBar query={query} setQuery={setQuery} />
+				<div className="max-w-5xl mx-auto grid grid-cols-4 gap-6 auto-fit mt-10 mb-10">
+					{filteredImage.map((data, index) => (
+						<ImageCard
+							key={index}
+							id={data.id}
+							title={data.title}
+							image={data.imgUrl}
+							isLiked={data.isLiked}
+							handleLike={handleLike}
+						/>
+					))}
+				</div>
+				{!showSnack && (
+					<button onClick={openModal} className="bg-emerald-600">
+						<p className={'text-3xl'}>Join our Membership!</p>
+					</button>
+				)}
 
-			<Modal isOpen={showModal}>
-				<button onClick={closeModal}>X</button>
-				<h2>Join The club</h2>
-				<RegisterForm closeModal={closeModal} openSnack={openSnack} />
-			</Modal>
+				<Modal isOpen={showModal}>
+					<button onClick={closeModal}>X</button>
+					<h2>Join The club</h2>
+					<RegisterForm closeModal={closeModal} openSnack={openSnack} />
+				</Modal>
 
-			{showSnack && <SnackBar />}
+				{showSnack && <SnackBar />}
+			</main>
 		</Fragment>
 	);
 }
