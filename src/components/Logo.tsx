@@ -3,6 +3,7 @@ import { Fragment } from 'react';
 const Logo = () => (
 	<Fragment>
 		<svg
+			className="animate-[spin_5s_linear_infinite] "
 			xmlns="http://www.w3.org/2000/svg"
 			aria-hidden="true"
 			role="img"
