@@ -45,7 +45,7 @@ function App() {
 
 	return (
 		<Fragment>
-			<main className="bg-gray-900 flex flex-col items-center  h-screen ">
+			<main className="flex flex-col items-center">
 				<div className="flex flex-col mt-20 items-center gap-4 scale-150">
 					<Logo />
 					<h1 className="text-3xl text-white font-bold mb-6">
