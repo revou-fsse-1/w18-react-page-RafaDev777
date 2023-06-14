@@ -26,18 +26,46 @@ const RegisterForm = (props: RegisterFormProps) => {
 		firstName: { required: 'First name is Required' },
 	};
 
+	const dangerStyle = 'text-sm text-red-500';
+	const inputStyle = 'border rounded-lg';
+
 	return (
-		<form onSubmit={handleSubmit(handleRegistration)}>
-			<label>Email</label>
-			<input name="email" {...register('email', registerOptions.email)} />
-			{errors?.email && <span>{errors.email.message}</span>}
+		<form
+			onSubmit={handleSubmit(handleRegistration)}
+			className="flex flex-col mt-5"
+		>
+			<label className="font-bold text-sm" htmlFor="email">
+				User Email
+			</label>
 			<input
-				name="firstName"
-				{...register('firstName', registerOptions.firstName)}
+				id="email"
+				{...register('email', registerOptions.email)}
+				className={inputStyle}
 			/>
-			{errors?.firstName && <span>{errors.firstName.message}</span>}
-			<input name="lastName" />
-			<button type="submit">Register</button>
+			{errors?.email && (
+				<span className={dangerStyle}>{errors.email.message}</span>
+			)}
+			<label className="font-bold text-sm mt-3" htmlFor="firstName">
+				First Name
+			</label>
+			<input
+				id="firstName"
+				{...register('firstName', registerOptions.firstName)}
+				className={inputStyle}
+			/>
+			{errors?.firstName && (
+				<span className={dangerStyle}>{errors.firstName.message}</span>
+			)}
+			<label className="font-bold text-sm mt-3" htmlFor="lastName">
+				Last Name
+			</label>
+			<input id="lastName" className={inputStyle} />
+			<button
+				type="submit"
+				className="bg-sky-500 text-white py-2 rounded-lg font-semibold mt-5"
+			>
+				Register Now
+			</button>
 		</form>
 	);
 };

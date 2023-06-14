@@ -1,5 +1,5 @@
 const LikedImageBar = (props: { totalLiked: number }) => (
-	<div>
+	<div className="bg-sky-400 px-4 py-3 rounded-xl my-5">
 		{props.totalLiked === 0 ? (
 			<p>You don't have liked photo</p>
 		) : props.totalLiked === 1 ? (

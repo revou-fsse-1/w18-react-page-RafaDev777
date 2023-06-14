@@ -44,31 +44,59 @@ function App() {
 
 	return (
 		<Fragment>
-			<main className="bg-gray-900 flex flex-col items-center justify-center h-screen">
+			<main className="bg-gray-900 flex flex-col items-center  h-screen">
+				<h1 className="text-3xl text-white font-bold">Photo Club Gallery</h1>
 				<LikedImageBar totalLiked={totalLikedImage} />
 				<SearchBar query={query} setQuery={setQuery} />
-				<div className="max-w-5xl mx-auto flex flex-wrap flex-row justify-center items-center gap-4">
-					{filteredImage.map((data, index) => (
-						<ImageCard
-							key={index}
-							id={data.id}
-							title={data.title}
-							image={data.imgUrl}
-							isLiked={data.isLiked}
-							handleLike={handleLike}
-						/>
-					))}
+				<div className="mb-10 max-w-5xl mx-auto flex flex-wrap flex-row justify-center items-center gap-4">
+					{filteredImage.length !== 0 ? (
+						filteredImage.map((data, index) => (
+							<ImageCard
+								key={index}
+								id={data.id}
+								title={data.title}
+								image={data.imgUrl}
+								isLiked={data.isLiked}
+								handleLike={handleLike}
+							/>
+						))
+					) : (
+						<div className="text-white text-2xl font-bold">
+							Oops no photos found, try another keyword!
+						</div>
+					)}
 				</div>
 				{!showSnack && (
-					<button onClick={openModal} className="bg-emerald-600">
-						<p className={'text-3xl'}>Join our Membership!</p>
+					<button
+						onClick={openModal}
+						className="bg-sky-400 text-lg text-white py-3 px-5 rounded-xl"
+					>
+						Join our Membership!
 					</button>
 				)}
 
-				<Modal isOpen={showModal}>
-					<button onClick={closeModal}>X</button>
-					<h2>Join The club</h2>
-					<RegisterForm closeModal={closeModal} openSnack={openSnack} />
+				<Modal
+					isOpen={showModal}
+					overlayClassName={
+						'fixed inset-0 bg-black/50 flex justify-center items-center'
+					}
+					className={'relative bg-white max-w-lg rounded-2xl'}
+				>
+					<button
+						onClick={closeModal}
+						className="absolute top-0 right-0 text-2xl font-thin mt-2 mr-3"
+					>
+						X
+					</button>
+					<div className="my-12 mx-12 justify-center">
+						<h2 className="font-bold text-2xl">
+							Register to Photo Club Member
+						</h2>
+						<small>
+							Get countless benefit by joining as a member of Photo Club
+						</small>
+						<RegisterForm closeModal={closeModal} openSnack={openSnack} />
+					</div>
 				</Modal>
 
 				{showSnack && <SnackBar />}
