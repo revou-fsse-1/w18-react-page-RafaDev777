@@ -6,6 +6,7 @@ import LikedImageBar from './components/LikedImageBar';
 import Modal from 'react-modal';
 import RegisterForm from './components/RegisterForm';
 import SnackBar from './components/SnackBar';
+import Logo from './components/Logo';
 
 Modal.setAppElement('#root');
 
@@ -44,8 +45,13 @@ function App() {
 
 	return (
 		<Fragment>
-			<main className="bg-gray-900 flex flex-col items-center  h-screen">
-				<h1 className="text-3xl text-white font-bold">Photo Club Gallery</h1>
+			<main className="bg-gray-900 flex flex-col items-center  h-screen ">
+				<div className="flex flex-col mt-20 items-center gap-4 scale-150">
+					<Logo />
+					<h1 className="text-3xl text-white font-bold mb-6">
+						Photo Club Gallery
+					</h1>
+				</div>
 				<LikedImageBar totalLiked={totalLikedImage} />
 				<SearchBar query={query} setQuery={setQuery} />
 				<div className="mb-10 max-w-5xl mx-auto flex flex-wrap flex-row justify-center items-center gap-4">
@@ -69,7 +75,7 @@ function App() {
 				{!showSnack && (
 					<button
 						onClick={openModal}
-						className="bg-sky-400 text-lg text-white py-3 px-5 rounded-xl"
+						className="bg-sky-600 text-lg text-white py-3 px-5 rounded-xl"
 					>
 						Join our Membership!
 					</button>

@@ -62,7 +62,7 @@ const RegisterForm = (props: RegisterFormProps) => {
 			<input id="lastName" className={inputStyle} />
 			<button
 				type="submit"
-				className="bg-sky-500 text-white py-2 rounded-lg font-semibold mt-5"
+				className="bg-sky-600 text-white py-2 rounded-lg font-semibold mt-5"
 			>
 				Register Now
 			</button>
