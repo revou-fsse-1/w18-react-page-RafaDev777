@@ -44,10 +44,10 @@ function App() {
 
 	return (
 		<Fragment>
-			<main className="bg-slate-700">
+			<main className="bg-gray-900 flex flex-col items-center justify-center h-screen">
 				<LikedImageBar totalLiked={totalLikedImage} />
 				<SearchBar query={query} setQuery={setQuery} />
-				<div className="max-w-5xl mx-auto grid grid-cols-4 gap-6 auto-fit mt-10 mb-10">
+				<div className="max-w-5xl mx-auto flex flex-wrap flex-row justify-center items-center gap-4">
 					{filteredImage.map((data, index) => (
 						<ImageCard
 							key={index}
