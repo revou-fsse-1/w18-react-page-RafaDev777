@@ -42,9 +42,10 @@ const RegisterForm = (props: RegisterFormProps) => {
 				{...register('email', registerOptions.email)}
 				className={inputStyle}
 			/>
-			{errors?.email && (
-				<span className={dangerStyle}>{errors.email.message}</span>
-			)}
+			<span className={dangerStyle}>
+				{errors?.email ? `${errors.email.message}` : null}
+			</span>
+
 			<label className="font-bold text-sm mt-3" htmlFor="firstName">
 				First Name
 			</label>
@@ -53,9 +54,9 @@ const RegisterForm = (props: RegisterFormProps) => {
 				{...register('firstName', registerOptions.firstName)}
 				className={inputStyle}
 			/>
-			{errors?.firstName && (
-				<span className={dangerStyle}>{errors.firstName.message}</span>
-			)}
+			<span className={dangerStyle}>
+				{errors?.firstName ? `${errors.firstName.message}` : null}
+			</span>
 			<label className="font-bold text-sm mt-3" htmlFor="lastName">
 				Last Name
 			</label>
