@@ -17,7 +17,7 @@ const ImageCard = (props: ImageCardProps) => {
 				style={{
 					backgroundImage: `url(${props.image})`,
 				}}
-				className="w-[200px] aspect-[2/3] bg-cover bg-no-repeat rounded-xl drop-shadwo-2xl grid overflow-hidden"
+				className="w-[200px] aspect-[2/3] bg-cover bg-no-repeat rounded-xl drop-shadwo-2xl grid overflow-hidden transition ease-in-out duration-300 hover:scale-110"
 			>
 				<button
 					onClick={() => {
